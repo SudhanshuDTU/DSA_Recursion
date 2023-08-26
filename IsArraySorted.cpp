@@ -8,9 +8,14 @@ bool isArraySorted(int arr[],int n){
    
 
     //rec case
-    if(isArraySorted(arr,n-1) and arr[n-2]<=arr[n-1]){
-        return true; 
+    if(arr[0]>arr[1]){
+        return false;
     }
+    else{
+        return isArraySorted(arr+1,n-1);
+    }
+   
+
     return false;
 }
 int main(){
